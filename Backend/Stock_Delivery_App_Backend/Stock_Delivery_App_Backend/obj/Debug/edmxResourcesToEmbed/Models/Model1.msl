@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Backend_FYP_DBModelStoreContainer" CdmEntityContainer="Backend_FYP_DBEntities">
+    <EntitySetMapping Name="batch_production">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.batch_production">
+        <MappingFragment StoreEntitySet="batch_production">
+          <ScalarProperty Name="batch_no" ColumnName="batch_no" />
+          <ScalarProperty Name="no_of_cartons" ColumnName="no_of_cartons" />
+          <ScalarProperty Name="mfg_date" ColumnName="mfg_date" />
+          <ScalarProperty Name="expiry_date" ColumnName="expiry_date" />
+          <ScalarProperty Name="vendor_productid" ColumnName="vendor_productid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlockUsers">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.BlockUser">
+        <MappingFragment StoreEntitySet="BlockUser">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="buyer_id" ColumnName="buyer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistributorProducts">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.DistributorProduct">
+        <MappingFragment StoreEntitySet="DistributorProduct">
+          <ScalarProperty Name="total_cartons" ColumnName="total_cartons" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="saleprice_for_shopkeeper" ColumnName="saleprice_for_shopkeeper" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="distributor_id" ColumnName="distributor_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistributorProductDetails">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.DistributorProductDetail">
+        <MappingFragment StoreEntitySet="DistributorProductDetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no_of_cartons" ColumnName="no_of_cartons" />
+          <ScalarProperty Name="batch_no" ColumnName="batch_no" />
+          <ScalarProperty Name="dproduct_id" ColumnName="dproduct_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetail">
+          <ScalarProperty Name="product_price" ColumnName="product_price" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="qty_ordred" ColumnName="qty_ordred" />
+          <ScalarProperty Name="batch_no" ColumnName="batch_no" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="paid_amount" ColumnName="paid_amount" />
+          <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+          <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProviderLists">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.ProviderList">
+        <MappingFragment StoreEntitySet="ProviderList">
+          <ScalarProperty Name="total_credit" ColumnName="total_credit" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="security_amount" ColumnName="security_amount" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="buyer_id" ColumnName="buyer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ratings">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.Rating">
+        <MappingFragment StoreEntitySet="Rating">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="no_of_stars" ColumnName="no_of_stars" />
+          <ScalarProperty Name="reviewer_id" ColumnName="reviewer_id" />
+          <ScalarProperty Name="reciever_id" ColumnName="reciever_id" />
+          <ScalarProperty Name="oid" ColumnName="oid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccounts">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.UserAccount">
+        <MappingFragment StoreEntitySet="UserAccount">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="roles" ColumnName="roles" />
+          <ScalarProperty Name="account_status" ColumnName="account_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAuthentications">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.UserAuthentication">
+        <MappingFragment StoreEntitySet="UserAuthentication">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="approval_date" ColumnName="approval_date" />
+          <ScalarProperty Name="action" ColumnName="action" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserOrders">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.UserOrder">
+        <MappingFragment StoreEntitySet="UserOrder">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="order_type" ColumnName="order_type" />
+          <ScalarProperty Name="order_state" ColumnName="order_state" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="order_place_date" ColumnName="order_place_date" />
+          <ScalarProperty Name="order_deliver_date" ColumnName="order_deliver_date" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="buyer_id" ColumnName="buyer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorDistributors">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.VendorDistributor">
+        <MappingFragment StoreEntitySet="VendorDistributor">
+          <ScalarProperty Name="total_credit" ColumnName="total_credit" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="distributor_status" ColumnName="distributor_status" />
+          <ScalarProperty Name="security_amount" ColumnName="security_amount" />
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+          <ScalarProperty Name="distributor_id" ColumnName="distributor_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorProducts">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.VendorProduct">
+        <MappingFragment StoreEntitySet="VendorProduct">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="qty_in_carton" ColumnName="qty_in_carton" />
+          <ScalarProperty Name="saleprice_per_carton" ColumnName="saleprice_per_carton" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="company_name" ColumnName="company_name" />
+          <ScalarProperty Name="threshold" ColumnName="threshold" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+          <ScalarProperty Name="total_cartons" ColumnName="total_cartons" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditPayments">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.CreditPayment">
+        <MappingFragment StoreEntitySet="CreditPayment">
+          <ScalarProperty Name="credit_id" ColumnName="credit_id" />
+          <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+          <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+          <ScalarProperty Name="paid_amount" ColumnName="paid_amount" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="buyer_id" ColumnName="buyer_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="request_status" ColumnName="request_status" />
+          <ScalarProperty Name="credit_id" ColumnName="credit_id" />
+          <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+          <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+          <ScalarProperty Name="paid_amount" ColumnName="paid_amount" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReturnProducts">
+      <EntityTypeMapping TypeName="Backend_FYP_DBModel.ReturnProduct">
+        <MappingFragment StoreEntitySet="ReturnProduct">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="buyer_id" ColumnName="buyer_id" />
+          <ScalarProperty Name="seller_id" ColumnName="seller_id" />
+          <ScalarProperty Name="price_per_pack" ColumnName="price_per_pack" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

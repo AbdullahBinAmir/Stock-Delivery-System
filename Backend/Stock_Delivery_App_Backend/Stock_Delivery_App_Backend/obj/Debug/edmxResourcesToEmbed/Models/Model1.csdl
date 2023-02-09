@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Backend_FYP_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="batch_production">
+    <Key>
+      <PropertyRef Name="batch_no" />
+    </Key>
+    <Property Name="batch_no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="no_of_cartons" Type="Int32" />
+    <Property Name="mfg_date" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="expiry_date" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="vendor_productid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BlockUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="seller_id" Type="Int32" />
+    <Property Name="buyer_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DistributorProduct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="saleprice_for_shopkeeper" Type="Int32" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="distributor_id" Type="Int32" />
+    <Property Name="total_cartons" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DistributorProductDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="no_of_cartons" Type="Int32" />
+    <Property Name="batch_no" Type="Int32" />
+    <Property Name="dproduct_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_id" Type="Int32" />
+    <Property Name="qty_ordred" Type="Int32" />
+    <Property Name="batch_no" Type="Int32" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="product_price" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="paid_amount" Type="Int32" />
+    <Property Name="payment_date" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="payment_type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="order_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProviderList">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="seller_id" Type="Int32" />
+    <Property Name="buyer_id" Type="Int32" />
+    <Property Name="security_amount" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <Property Name="total_credit" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="no_of_stars" Type="Int32" />
+    <Property Name="reviewer_id" Type="Int32" />
+    <Property Name="reciever_id" Type="Int32" />
+    <Property Name="oid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="mobile_no" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="roles" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="account_status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserAuthentication">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="approval_date" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="action" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserOrder">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_status" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="order_type" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="order_state" Type="Int32" />
+    <Property Name="total_amount" Type="Int32" />
+    <Property Name="order_place_date" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="order_deliver_date" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="seller_id" Type="Int32" />
+    <Property Name="buyer_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VendorDistributor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="distributor_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="security_amount" Type="Int32" />
+    <Property Name="vendor_id" Type="Int32" />
+    <Property Name="distributor_id" Type="Int32" />
+    <Property Name="total_credit" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VendorProduct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="qty_in_carton" Type="Int32" />
+    <Property Name="saleprice_per_carton" Type="Int32" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="company_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="threshold" Type="Int32" />
+    <Property Name="image" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="vendor_id" Type="Int32" />
+    <Property Name="total_cartons" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="Backend_FYP_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="batch_production" EntityType="Self.batch_production" />
+    <EntitySet Name="BlockUsers" EntityType="Self.BlockUser" />
+    <EntitySet Name="DistributorProducts" EntityType="Self.DistributorProduct" />
+    <EntitySet Name="DistributorProductDetails" EntityType="Self.DistributorProductDetail" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="ProviderLists" EntityType="Self.ProviderList" />
+    <EntitySet Name="Ratings" EntityType="Self.Rating" />
+    <EntitySet Name="UserAccounts" EntityType="Self.UserAccount" />
+    <EntitySet Name="UserAuthentications" EntityType="Self.UserAuthentication" />
+    <EntitySet Name="UserOrders" EntityType="Self.UserOrder" />
+    <EntitySet Name="VendorDistributors" EntityType="Self.VendorDistributor" />
+    <EntitySet Name="VendorProducts" EntityType="Self.VendorProduct" />
+    <EntitySet Name="CreditPayments" EntityType="Backend_FYP_DBModel.CreditPayment" />
+    <EntitySet Name="Notifications" EntityType="Backend_FYP_DBModel.Notification" />
+    <EntitySet Name="ReturnProducts" EntityType="Backend_FYP_DBModel.ReturnProduct" />
+  </EntityContainer>
+  <EntityType Name="CreditPayment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="paid_amount" Type="Int32" />
+    <Property Name="payment_date" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="payment_type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="credit_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="paid_amount" Type="Int32" />
+    <Property Name="payment_date" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="payment_type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="credit_id" Type="Int32" />
+    <Property Name="request_status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="seller_id" Type="Int32" />
+    <Property Name="buyer_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ReturnProduct">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reason" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="order_id" Type="Int32" />
+    <Property Name="qty" Type="Int32" />
+    <Property Name="price_per_pack" Type="Int32" />
+    <Property Name="seller_id" Type="Int32" />
+    <Property Name="buyer_id" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
